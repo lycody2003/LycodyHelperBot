@@ -1,6 +1,8 @@
+const express = require('express');
 const { exec } = require("child_process");
 const { Telegraf } = require("telegraf"); // Telegram Bot API library
 require("dotenv").config();
+const app = express();
 
 // Create the bot instance
 const bot = new Telegraf(process.env.BOT_TOKEN);
@@ -29,6 +31,8 @@ bot.start((ctx) => {
   }
 });
 
-// Launch the bot
 bot.launch();
-console.log("Bot is running...");
+
+app.listen(3000, () => {
+  console.log('Bot is running!: port 3000');
+});
