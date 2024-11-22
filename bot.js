@@ -33,6 +33,6 @@ bot.start((ctx) => {
 
 bot.launch();
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('Bot is running!: port 3000');
 });
